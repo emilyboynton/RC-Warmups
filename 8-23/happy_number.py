@@ -11,18 +11,21 @@
 # happy(19) -> True
 # happy(11) -> False
 
+loop = 1000
+
 def happy(num):
 	num = str(num)
 	added = 0
 	for digit in num:
-		added += [int(digit) * int(digit)
-
+		added += int(digit) * int(digit)
 	if added == 1:
 		return True
-	if added < 10:
-		return False
 	else:
-		return happy(added)
+		global loop
+		loop -= 1
+		if loop > 0:
+			return happy(added)
+	return False
 
 print happy(19)
-print happy(11) 
+print happy(11)
