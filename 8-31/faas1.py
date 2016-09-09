@@ -23,7 +23,6 @@
 def faas1(num):
 	for i in range(1,101, num):
 		printable = ""
-	# if i % 3 == 0 and i % 5 == 0:
 		if i % 3 == 0:
 			printable += "fizz"
 		if i % 5 == 0:
